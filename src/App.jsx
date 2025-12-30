@@ -1,31 +1,29 @@
-import { useState } from 'react'
+import { useState } from "react"
 
 function App() {
   const [count, setCount] = useState(0)
-  const [message, setMessage] = useState("")
+  const [step, setStep] = useState(1)
 
-  function increaseCount(){
-    setCount(prev=>prev+1)
-    setMessage("")
+  function increaseCounter() {
+    setCount(prev => prev + step)
   }
 
-  function decreaseCount(){
-    if (count===0){
-      setMessage("Minimum reached")
-    }else{
-      setCount(prev=>prev-1)
-      setMessage("")
-    }
+  function decreaseCounter(){
+    setCount(prev=>{
+        if (prev - step < 0) {
+            return 0
+        }
+        return prev - step
+    })
   }
 
   return (
     <div>
-      <h1>Count:{count}</h1>
-      {message && <p>{message}</p>}
-      <div className="button">
-        <button onClick={increaseCount}>Increase</button>
-        <button onClick={decreaseCount}>Decrease</button>
-      </div>
+      <h1>Step Counter</h1>
+      <h2>Count:{count}</h2>
+      <button onClick={increaseCounter}>Increase</button>
+      <button onClick={decreaseCounter}>Decrease</button>
+      <input type="number" value={step===0?"":step} onChange={(e)=> setStep(Number(e.target.value))}/>
     </div>
   )
 }
