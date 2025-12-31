@@ -1,24 +1,16 @@
----
+## Challenge 4 – Todo Delete
 
-## Notes Template for Future Challenges
+### Concepts Learned
+- Removing items immutably
+- Using filter()
+- Passing index to handler
+- Rendering dynamic buttons
 
-### Challenge Name
+### Mistakes I Made
+- Tried nested filter
+- Misused map in JSX
+- Tried updating state while rendering
 
-#### Goal
-[What you're building]
-
-#### Concepts Learned
-- [Concept 1]
-- [Concept 2]
-
-#### Key Code Patterns
-```js
-// Code examples
-```
-
-#### Mistakes I Made
-- [Mistake 1]
-- [Mistake 2]
-
-#### Key Takeaway
-[Main lesson learned]
+### Takeaway
+State updates must be immutable.
+Render logic and update logic are separate.
