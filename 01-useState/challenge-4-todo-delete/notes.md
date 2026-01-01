@@ -14,3 +14,14 @@
 ### Takeaway
 State updates must be immutable.
 Render logic and update logic are separate.
+
+
+Todo Delete Logic (Plain English)
+
+1️⃣ Render todos using .map()
+2️⃣ For each todo:
+    Show text
+    Show delete button
+    3️⃣ When delete clicked:
+    Remove that index from array
+    Create new array using .filter()
